@@ -1,0 +1,2071 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Driver is a Catch v2.0.1 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+copy constructor
+  copy constructor - head links after copy construct
+-------------------------------------------------------------------------------
+TreeTest.cc:275
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  1 == 4
+
+-------------------------------------------------------------------------------
+begin
+  begin - non-const
+-------------------------------------------------------------------------------
+TreeTest.cc:344
+...............................................................................
+
+TreeTest.cc:347: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+begin
+  begin - const
+-------------------------------------------------------------------------------
+TreeTest.cc:350
+...............................................................................
+
+TreeTest.cc:354: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+insert
+  insert - make simple tree
+  insert - make simple tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:530
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+insert
+  insert - make skewed tree
+  insert - make skewed tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:552
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  1 == 10
+
+-------------------------------------------------------------------------------
+insert
+  insert - make full tree
+  insert - make full tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:574
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  8 == 1
+
+-------------------------------------------------------------------------------
+insert
+  insert - duplicate values
+  insert - duplicate values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:596
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  2 == 1
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:627
+...............................................................................
+
+TreeTest.cc:639: FAILED:
+explicitly with message:
+  Tree state incorrect. Tree size too large to display.
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:644
+...............................................................................
+
+TreeTest.cc:646: FAILED:
+  REQUIRE( tree.size() == big_rand.size() )
+with expansion:
+  9366 (0x2496) == 8829 (0x227d)
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:650
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  19544 (0x4c58) == 0
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on unsuccessful insert
+  insert - return value - on unsuccessful insert - iterator value
+-------------------------------------------------------------------------------
+TreeTest.cc:665
+...............................................................................
+
+TreeTest.cc:667: FAILED:
+  REQUIRE( ret.first.m_nodePtr == nullptr )
+with expansion:
+  0x00007fe38d5019d0 == nullptr
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on unsuccessful insert
+  insert - return value - on unsuccessful insert - boolean value
+-------------------------------------------------------------------------------
+TreeTest.cc:670
+...............................................................................
+
+TreeTest.cc:672: FAILED:
+  REQUIRE_FALSE( ret.second )
+with expansion:
+  !true
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on successful insert
+  insert - return value - on successful insert - iterator value
+-------------------------------------------------------------------------------
+TreeTest.cc:680
+...............................................................................
+
+TreeTest.cc:683: FAILED:
+  REQUIRE( ret.first.m_nodePtr->data == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:728
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 6 7 8 9 ]" == "[ 1 2 3 7 8 9 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:734
+...............................................................................
+
+TreeTest.cc:736: FAILED:
+  REQUIRE( tree.size() == 6 )
+with expansion:
+  8 == 6
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:740
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  7 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:752
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 4 5 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:758
+...............................................................................
+
+TreeTest.cc:760: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:764
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  4 == 7
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:776
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 1 2 3 4 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:782
+...............................................................................
+
+TreeTest.cc:784: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:788
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:800
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 0 1 2 3 4 5 6 7 ]" == "[ 0 2 4 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:806
+...............................................................................
+
+TreeTest.cc:808: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:812
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 0
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:824
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 ]" == "[ 1 2 3 5 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:830
+...............................................................................
+
+TreeTest.cc:832: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:836
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  5 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:848
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 ]" == "[ 1 2 5 6 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:854
+...............................................................................
+
+TreeTest.cc:856: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:860
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  5 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:872
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 9 10 11 ]"
+  ==
+  "[ 1 3 5 6 7 9 10 11 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:878
+...............................................................................
+
+TreeTest.cc:880: FAILED:
+  REQUIRE( tree.size() == 8 )
+with expansion:
+  11 == 8
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:884
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  7 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:896
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 ]" == "[ ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:902
+...............................................................................
+
+TreeTest.cc:904: FAILED:
+  REQUIRE( tree.size() == 0 )
+with expansion:
+  3 == 0
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:908
+...............................................................................
+
+TreeTest.cc:1611: FAILED:
+  REQUIRE( head->left == nullptr )
+with expansion:
+  0x00007fe38d50b180 == nullptr
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:920
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 4 5 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:926
+...............................................................................
+
+TreeTest.cc:928: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:932
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  4 == 7
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:943
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 4 5 7 8 ]" == "[ 1 4 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:949
+...............................................................................
+
+TreeTest.cc:951: FAILED:
+  REQUIRE( tree.size() == 3 )
+with expansion:
+  6 == 3
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:955
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - return value
+  erase - return value - on successful erase
+  erase - return value - on successful erase - on last value in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:982
+...............................................................................
+
+TreeTest.cc:986: FAILED:
+  REQUIRE( tree.erase(7) )
+with expansion:
+  0
+
+-------------------------------------------------------------------------------
+erase
+  erase - return value
+  erase - return value - on successful erase
+  erase - return value - on successful erase - on value other than last in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:989
+...............................................................................
+
+TreeTest.cc:993: FAILED:
+  REQUIRE( tree.erase(3) )
+with expansion:
+  0
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on simple tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1019
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 2 4 6 7 ]" == "[ 4 | 2 7 | - - 6 - ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on full tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1026
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 6 7 8 ]"
+  ==
+  "[ 4 | 2 7 | 1 3 6 8 ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on skewed tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1032
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 5 6 ]"
+  ==
+  "[ 1 | - 2 | - - - 4 | - - - - - - 3 5 | - - - - - - - - - - - - - - - 6 ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on big tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1039
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 10 11 12 13 14 14 15 16 17 18 19 21 31 32 39 44 45 45 46
+  47 49 50 51 52 53 63 64 65 66 69 73 76 77 78 81 99 100 101 102 104 223 250
+  300 999 ]"
+  ==
+  "[ 49 | 14 65 | 12 17 64 223 | 4 13 15 21 63 - 81 250 | 1 7 - - - 16 19 44 50
+  - - - 69 100 - 300 | - 2 6 11 - - - - - - - - 18 - 39 45 - 51 - - - - - - 66
+  73 99 101 - - - 999 | - - - 3 5 - 8 - - - - - - - - - - - - - - - - - - - - -
+  31 - - 46 - - - 52 - - - - - - - - - - - - - - - 77 - - - 102 - - - - - - - -
+  | - - - - - - - - - - - - - 10 - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - - - - - - - 32 - - - - - 47 - - - - - - - 53 - -
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 76 78 - - - - - - -
+  104 - - - - - - - - - - - - - - - - ]"
+
+-------------------------------------------------------------------------------
+iterator post-increment
+  iterator post-increment - return value from incrementation
+-------------------------------------------------------------------------------
+TreeTest.cc:1184
+...............................................................................
+
+TreeTest.cc:1189: FAILED:
+  REQUIRE( actual == expected )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator post-decrement
+  iterator post-decrement - return value from decrementation
+-------------------------------------------------------------------------------
+TreeTest.cc:1214
+...............................................................................
+
+TreeTest.cc:1219: FAILED:
+  REQUIRE( actual == expected )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has a right child
+  iterator increment - on node that has a right child - with no subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1234
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1244: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 7 )
+with expansion:
+  6 == 7
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has a right child
+  iterator increment - on node that has a right child - with a subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1247
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1257: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  4 == 5
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has both children
+-------------------------------------------------------------------------------
+TreeTest.cc:1261
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1271: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 34 )
+with expansion:
+  21 == 34
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is a left child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1274
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1283: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 7 )
+with expansion:
+  6 == 7
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is a right child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1286
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1295: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  15 == 5
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on maximum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1299
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1308: FAILED:
+  REQUIRE( iter == tree.end() )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is the left child of the tree root when it
+  is the maximum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1311
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1321: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 6 )
+with expansion:
+  0 == 6
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has a left child
+  iterator decrement - on node that has a left child - with no subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1347
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1357: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  7 == 2
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has a left child
+  iterator decrement - on node that has a left child - with a subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1360
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1370: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  7 == 5
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has both children
+-------------------------------------------------------------------------------
+TreeTest.cc:1374
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1384: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 8 )
+with expansion:
+  17 == 8
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is a right child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1387
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1396: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  3 == 2
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is a left child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1399
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1408: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 10 )
+with expansion:
+  5 == 10
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on minimum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1412
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1421: FAILED:
+  REQUIRE( iter == tree.end() )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is the right child of the tree root when it
+  is the minimum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1424
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1434: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 6 )
+with expansion:
+  0 == 6
+
+-------------------------------------------------------------------------------
+make string tree
+  make string tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:1470
+...............................................................................
+
+TreeTest.cc:1482: FAILED:
+  REQUIRE( head->right->data == "jeff" )
+with expansion:
+  "my" == "jeff"
+
+-------------------------------------------------------------------------------
+stress test
+  stress test
+-------------------------------------------------------------------------------
+TreeTest.cc:1493
+...............................................................................
+
+TreeTest.cc:1527: FAILED:
+explicitly with message:
+  Tree state incorrect. Tree size too large to display.
+
+===============================================================================
+test cases:  20 |   9 passed | 11 failed
+assertions: 300 | 219 passed | 81 failed
+
+- 0.72 points:   copy constructor - head links after copy construct
+- 0.90 points:   begin - non-const
+- 0.90 points:   begin - const
+- 0.36 points:   insert - make simple tree - head links
+- 0.36 points:   insert - make skewed tree - head links
+- 0.36 points:   insert - make full tree - head links
+- 0.18 points:   insert - duplicate values - head links
+- 0.67 points:   insert - make big tree - state of tree
+- 0.04 points:   insert - make big tree - size of tree
+- 0.18 points:   insert - make big tree - head links
+- 0.67 points:   insert - return value - on unsuccessful insert - iterator value
+- 0.23 points:   insert - return value - on unsuccessful insert - boolean value
+- 0.67 points:   insert - return value - on successful insert - iterator value
+- 1.35 points:   erase - root of tree - state of tree
+- 0.09 points:   erase - root of tree - size of tree
+- 0.36 points:   erase - root of tree - head links
+- 0.67 points:   erase - minimum value of tree - state of tree
+- 0.04 points:   erase - minimum value of tree - size of tree
+- 0.18 points:   erase - minimum value of tree - head links
+- 0.67 points:   erase - maximum value of tree - state of tree
+- 0.04 points:   erase - maximum value of tree - size of tree
+- 0.18 points:   erase - maximum value of tree - head links
+- 0.67 points:   erase - leaf nodes - state of tree
+- 0.04 points:   erase - leaf nodes - size of tree
+- 0.18 points:   erase - leaf nodes - head links
+- 1.35 points:   erase - nodes with only left child - state of tree
+- 0.09 points:   erase - nodes with only left child - size of tree
+- 0.36 points:   erase - nodes with only left child - head links
+- 1.35 points:   erase - nodes with only left child - state of tree
+- 0.09 points:   erase - nodes with only left child - size of tree
+- 0.36 points:   erase - nodes with only left child - head links
+- 1.35 points:   erase - nodes with both children - state of tree
+- 0.09 points:   erase - nodes with both children - size of tree
+- 0.36 points:   erase - nodes with both children - head links
+- 1.35 points:   erase - all values in tree - state of tree
+- 0.09 points:   erase - all values in tree - size of tree
+- 0.36 points:   erase - all values in tree - head links
+- 0.67 points:   erase - duplicate values - state of tree
+- 0.04 points:   erase - duplicate values - size of tree
+- 0.18 points:   erase - duplicate values - head links
+- 0.67 points:   erase - second largest/second smallest values - state of tree
+- 0.04 points:   erase - second largest/second smallest values - size of tree
+- 0.18 points:   erase - second largest/second smallest values - head links
+- 0.23 points:   erase - return value - on successful erase - on last value in tree
+- 0.67 points:   erase - return value - on successful erase - on value other than last in tree
+- 1.80 points:   print level order - on simple tree
+- 1.80 points:   print level order - on full tree
+- 1.80 points:   print level order - on skewed tree
+- 1.80 points:   print level order - on big tree
+- 0.90 points:   iterator post-increment - return value from incrementation
+- 0.90 points:   iterator post-decrement - return value from decrementation
+- 0.90 points:   iterator increment - on node that has a right child - with no subtree
+- 0.90 points:   iterator increment - on node that has a right child - with a subtree
+- 0.90 points:   iterator increment - on node that has both children
+- 1.58 points:   iterator increment - on node that is a left child with no children
+- 1.58 points:   iterator increment - on node that is a right child with no children
+- 1.35 points:   iterator increment - on maximum value node in tree
+- 0.90 points:   iterator increment - on node that is the left child of the tree root when it is the maximum value node in tree
+- 0.90 points:   iterator decrement - on node that has a left child - with no subtree
+- 0.90 points:   iterator decrement - on node that has a left child - with a subtree
+- 0.90 points:   iterator decrement - on node that has both children
+- 1.58 points:   iterator decrement - on node that is a right child with no children
+- 1.58 points:   iterator decrement - on node that is a left child with no children
+- 1.35 points:   iterator decrement - on minimum value node in tree
+- 0.90 points:   iterator decrement - on node that is the right child of the tree root when it is the minimum value node in tree
+- 0.18 points:   make string tree - head links
+- 1.80 points:   stress test
+[1m
+SCORE: 42.17 / 90.00   >>>   [31m46.85 %
+
+[0m
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Driver is a Catch v2.0.1 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+copy constructor
+  copy constructor - head links after copy construct
+-------------------------------------------------------------------------------
+TreeTest.cc:275
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  1 == 4
+
+-------------------------------------------------------------------------------
+begin
+  begin - non-const
+-------------------------------------------------------------------------------
+TreeTest.cc:344
+...............................................................................
+
+TreeTest.cc:347: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+begin
+  begin - const
+-------------------------------------------------------------------------------
+TreeTest.cc:350
+...............................................................................
+
+TreeTest.cc:354: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+insert
+  insert - make simple tree
+  insert - make simple tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:530
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 2
+
+-------------------------------------------------------------------------------
+insert
+  insert - make skewed tree
+  insert - make skewed tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:552
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  1 == 10
+
+-------------------------------------------------------------------------------
+insert
+  insert - make full tree
+  insert - make full tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:574
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  8 == 1
+
+-------------------------------------------------------------------------------
+insert
+  insert - duplicate values
+  insert - duplicate values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:596
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  2 == 1
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:627
+...............................................................................
+
+TreeTest.cc:639: FAILED:
+explicitly with message:
+  Tree state incorrect. Tree size too large to display.
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:644
+...............................................................................
+
+TreeTest.cc:646: FAILED:
+  REQUIRE( tree.size() == big_rand.size() )
+with expansion:
+  9366 (0x2496) == 8829 (0x227d)
+
+-------------------------------------------------------------------------------
+insert
+  insert - make big tree
+  insert - make big tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:650
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  19544 (0x4c58) == 0
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on unsuccessful insert
+  insert - return value - on unsuccessful insert - iterator value
+-------------------------------------------------------------------------------
+TreeTest.cc:665
+...............................................................................
+
+TreeTest.cc:667: FAILED:
+  REQUIRE( ret.first.m_nodePtr == nullptr )
+with expansion:
+  0x00007fa3d151d0d0 == nullptr
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on unsuccessful insert
+  insert - return value - on unsuccessful insert - boolean value
+-------------------------------------------------------------------------------
+TreeTest.cc:670
+...............................................................................
+
+TreeTest.cc:672: FAILED:
+  REQUIRE_FALSE( ret.second )
+with expansion:
+  !true
+
+-------------------------------------------------------------------------------
+insert
+  insert - return value
+  insert - return value - on successful insert
+  insert - return value - on successful insert - iterator value
+-------------------------------------------------------------------------------
+TreeTest.cc:680
+...............................................................................
+
+TreeTest.cc:683: FAILED:
+  REQUIRE( ret.first.m_nodePtr->data == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:728
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 6 7 8 9 ]" == "[ 1 2 3 7 8 9 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:734
+...............................................................................
+
+TreeTest.cc:736: FAILED:
+  REQUIRE( tree.size() == 6 )
+with expansion:
+  8 == 6
+
+-------------------------------------------------------------------------------
+erase
+  erase - root of tree
+  erase - root of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:740
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  7 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:752
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 4 5 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:758
+...............................................................................
+
+TreeTest.cc:760: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - minimum value of tree
+  erase - minimum value of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:764
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  4 == 7
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:776
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 1 2 3 4 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:782
+...............................................................................
+
+TreeTest.cc:784: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - maximum value of tree
+  erase - maximum value of tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:788
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:800
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 0 1 2 3 4 5 6 7 ]" == "[ 0 2 4 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:806
+...............................................................................
+
+TreeTest.cc:808: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - leaf nodes
+  erase - leaf nodes - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:812
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 0
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:824
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 ]" == "[ 1 2 3 5 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:830
+...............................................................................
+
+TreeTest.cc:832: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only left child
+  erase - nodes with only left child - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:836
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  5 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:848
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 ]" == "[ 1 2 5 6 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:854
+...............................................................................
+
+TreeTest.cc:856: FAILED:
+  REQUIRE( tree.size() == 5 )
+with expansion:
+  8 == 5
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with only right child
+  erase - nodes with only left child - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:860
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  5 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:872
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 9 10 11 ]"
+  ==
+  "[ 1 3 5 6 7 9 10 11 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:878
+...............................................................................
+
+TreeTest.cc:880: FAILED:
+  REQUIRE( tree.size() == 8 )
+with expansion:
+  11 == 8
+
+-------------------------------------------------------------------------------
+erase
+  erase - nodes with both children
+  erase - nodes with both children - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:884
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  7 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:896
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 ]" == "[ ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:902
+...............................................................................
+
+TreeTest.cc:904: FAILED:
+  REQUIRE( tree.size() == 0 )
+with expansion:
+  3 == 0
+
+-------------------------------------------------------------------------------
+erase
+  erase - all values in tree
+  erase - all values in tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:908
+...............................................................................
+
+TreeTest.cc:1611: FAILED:
+  REQUIRE( head->left == nullptr )
+with expansion:
+  0x00007fa3d1700000 == nullptr
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:920
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 3 4 5 6 7 ]" == "[ 4 5 6 7 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:926
+...............................................................................
+
+TreeTest.cc:928: FAILED:
+  REQUIRE( tree.size() == 4 )
+with expansion:
+  7 == 4
+
+-------------------------------------------------------------------------------
+erase
+  erase - duplicate values
+  erase - duplicate values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:932
+...............................................................................
+
+TreeTest.cc:1599: FAILED:
+  REQUIRE( head->left->data == left )
+with expansion:
+  4 == 7
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - state of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:943
+...............................................................................
+
+TreeTest.cc:1569: FAILED:
+  REQUIRE( output.str () == treeString )
+with expansion:
+  "[ 1 2 4 5 7 8 ]" == "[ 1 4 8 ]"
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - size of tree
+-------------------------------------------------------------------------------
+TreeTest.cc:949
+...............................................................................
+
+TreeTest.cc:951: FAILED:
+  REQUIRE( tree.size() == 3 )
+with expansion:
+  6 == 3
+
+-------------------------------------------------------------------------------
+erase
+  erase - second largest/second smallest values
+  erase - second largest/second smallest values - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:955
+...............................................................................
+
+TreeTest.cc:1598: FAILED:
+  REQUIRE( head->right->data == right )
+with expansion:
+  4 == 1
+
+-------------------------------------------------------------------------------
+erase
+  erase - return value
+  erase - return value - on successful erase
+  erase - return value - on successful erase - on last value in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:982
+...............................................................................
+
+TreeTest.cc:986: FAILED:
+  REQUIRE( tree.erase(7) )
+with expansion:
+  0
+
+-------------------------------------------------------------------------------
+erase
+  erase - return value
+  erase - return value - on successful erase
+  erase - return value - on successful erase - on value other than last in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:989
+...............................................................................
+
+TreeTest.cc:993: FAILED:
+  REQUIRE( tree.erase(3) )
+with expansion:
+  0
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on simple tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1019
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 2 4 6 7 ]" == "[ 4 | 2 7 | - - 6 - ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on full tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1026
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 6 7 8 ]"
+  ==
+  "[ 4 | 2 7 | 1 3 6 8 ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on skewed tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1032
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 5 6 ]"
+  ==
+  "[ 1 | - 2 | - - - 4 | - - - - - - 3 5 | - - - - - - - - - - - - - - - 6 ]"
+
+-------------------------------------------------------------------------------
+print level order
+  print level order - on big tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1039
+...............................................................................
+
+TreeTest.cc:1639: FAILED:
+  CHECK( out == answer )
+with expansion:
+  "[ 1 2 3 4 5 6 7 8 10 11 12 13 14 14 15 16 17 18 19 21 31 32 39 44 45 45 46
+  47 49 50 51 52 53 63 64 65 66 69 73 76 77 78 81 99 100 101 102 104 223 250
+  300 999 ]"
+  ==
+  "[ 49 | 14 65 | 12 17 64 223 | 4 13 15 21 63 - 81 250 | 1 7 - - - 16 19 44 50
+  - - - 69 100 - 300 | - 2 6 11 - - - - - - - - 18 - 39 45 - 51 - - - - - - 66
+  73 99 101 - - - 999 | - - - 3 5 - 8 - - - - - - - - - - - - - - - - - - - - -
+  31 - - 46 - - - 52 - - - - - - - - - - - - - - - 77 - - - 102 - - - - - - - -
+  | - - - - - - - - - - - - - 10 - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - - - - - - - 32 - - - - - 47 - - - - - - - 53 - -
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 76 78 - - - - - - -
+  104 - - - - - - - - - - - - - - - - ]"
+
+-------------------------------------------------------------------------------
+iterator post-increment
+  iterator post-increment - return value from incrementation
+-------------------------------------------------------------------------------
+TreeTest.cc:1184
+...............................................................................
+
+TreeTest.cc:1189: FAILED:
+  REQUIRE( actual == expected )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator post-decrement
+  iterator post-decrement - return value from decrementation
+-------------------------------------------------------------------------------
+TreeTest.cc:1214
+...............................................................................
+
+TreeTest.cc:1219: FAILED:
+  REQUIRE( actual == expected )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has a right child
+  iterator increment - on node that has a right child - with no subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1234
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1244: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 7 )
+with expansion:
+  6 == 7
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has a right child
+  iterator increment - on node that has a right child - with a subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1247
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1257: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  4 == 5
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that has both children
+-------------------------------------------------------------------------------
+TreeTest.cc:1261
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1271: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 34 )
+with expansion:
+  21 == 34
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is a left child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1274
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1283: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 7 )
+with expansion:
+  6 == 7
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is a right child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1286
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1295: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  15 == 5
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on maximum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1299
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1308: FAILED:
+  REQUIRE( iter == tree.end() )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator increment
+  iterator increment - on node that is the left child of the tree root when it
+  is the maximum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1311
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1321: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 6 )
+with expansion:
+  0 == 6
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has a left child
+  iterator decrement - on node that has a left child - with no subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1347
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1357: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  7 == 2
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has a left child
+  iterator decrement - on node that has a left child - with a subtree
+-------------------------------------------------------------------------------
+TreeTest.cc:1360
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1370: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 5 )
+with expansion:
+  7 == 5
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that has both children
+-------------------------------------------------------------------------------
+TreeTest.cc:1374
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1384: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 8 )
+with expansion:
+  17 == 8
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is a right child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1387
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1396: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 2 )
+with expansion:
+  3 == 2
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is a left child with no children
+-------------------------------------------------------------------------------
+TreeTest.cc:1399
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1408: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 10 )
+with expansion:
+  5 == 10
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on minimum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1412
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1421: FAILED:
+  REQUIRE( iter == tree.end() )
+with expansion:
+  {?} == {?}
+
+-------------------------------------------------------------------------------
+iterator decrement
+  iterator decrement - on node that is the right child of the tree root when it
+  is the minimum value node in tree
+-------------------------------------------------------------------------------
+TreeTest.cc:1424
+...............................................................................
+
+TreeTest.cc:1677: FAILED:
+  CHECK( condition )
+with expansion:
+  false
+
+Your insert needs to be fixed before this test can work.
+TreeTest.cc:1434: FAILED:
+  REQUIRE( iter.m_nodePtr->data == 6 )
+with expansion:
+  0 == 6
+
+-------------------------------------------------------------------------------
+make string tree
+  make string tree - head links
+-------------------------------------------------------------------------------
+TreeTest.cc:1470
+...............................................................................
+
+TreeTest.cc:1482: FAILED:
+  REQUIRE( head->right->data == "jeff" )
+with expansion:
+  "my" == "jeff"
+
+-------------------------------------------------------------------------------
+stress test
+  stress test
+-------------------------------------------------------------------------------
+TreeTest.cc:1493
+...............................................................................
+
+TreeTest.cc:1527: FAILED:
+explicitly with message:
+  Tree state incorrect. Tree size too large to display.
+
+===============================================================================
+test cases:  20 |   9 passed | 11 failed
+assertions: 300 | 219 passed | 81 failed
+
+- 0.72 points:   copy constructor - head links after copy construct
+- 0.90 points:   begin - non-const
+- 0.90 points:   begin - const
+- 0.36 points:   insert - make simple tree - head links
+- 0.36 points:   insert - make skewed tree - head links
+- 0.36 points:   insert - make full tree - head links
+- 0.18 points:   insert - duplicate values - head links
+- 0.67 points:   insert - make big tree - state of tree
+- 0.04 points:   insert - make big tree - size of tree
+- 0.18 points:   insert - make big tree - head links
+- 0.67 points:   insert - return value - on unsuccessful insert - iterator value
+- 0.23 points:   insert - return value - on unsuccessful insert - boolean value
+- 0.67 points:   insert - return value - on successful insert - iterator value
+- 1.35 points:   erase - root of tree - state of tree
+- 0.09 points:   erase - root of tree - size of tree
+- 0.36 points:   erase - root of tree - head links
+- 0.67 points:   erase - minimum value of tree - state of tree
+- 0.04 points:   erase - minimum value of tree - size of tree
+- 0.18 points:   erase - minimum value of tree - head links
+- 0.67 points:   erase - maximum value of tree - state of tree
+- 0.04 points:   erase - maximum value of tree - size of tree
+- 0.18 points:   erase - maximum value of tree - head links
+- 0.67 points:   erase - leaf nodes - state of tree
+- 0.04 points:   erase - leaf nodes - size of tree
+- 0.18 points:   erase - leaf nodes - head links
+- 1.35 points:   erase - nodes with only left child - state of tree
+- 0.09 points:   erase - nodes with only left child - size of tree
+- 0.36 points:   erase - nodes with only left child - head links
+- 1.35 points:   erase - nodes with only left child - state of tree
+- 0.09 points:   erase - nodes with only left child - size of tree
+- 0.36 points:   erase - nodes with only left child - head links
+- 1.35 points:   erase - nodes with both children - state of tree
+- 0.09 points:   erase - nodes with both children - size of tree
+- 0.36 points:   erase - nodes with both children - head links
+- 1.35 points:   erase - all values in tree - state of tree
+- 0.09 points:   erase - all values in tree - size of tree
+- 0.36 points:   erase - all values in tree - head links
+- 0.67 points:   erase - duplicate values - state of tree
+- 0.04 points:   erase - duplicate values - size of tree
+- 0.18 points:   erase - duplicate values - head links
+- 0.67 points:   erase - second largest/second smallest values - state of tree
+- 0.04 points:   erase - second largest/second smallest values - size of tree
+- 0.18 points:   erase - second largest/second smallest values - head links
+- 0.23 points:   erase - return value - on successful erase - on last value in tree
+- 0.67 points:   erase - return value - on successful erase - on value other than last in tree
+- 1.80 points:   print level order - on simple tree
+- 1.80 points:   print level order - on full tree
+- 1.80 points:   print level order - on skewed tree
+- 1.80 points:   print level order - on big tree
+- 0.90 points:   iterator post-increment - return value from incrementation
+- 0.90 points:   iterator post-decrement - return value from decrementation
+- 0.90 points:   iterator increment - on node that has a right child - with no subtree
+- 0.90 points:   iterator increment - on node that has a right child - with a subtree
+- 0.90 points:   iterator increment - on node that has both children
+- 1.58 points:   iterator increment - on node that is a left child with no children
+- 1.58 points:   iterator increment - on node that is a right child with no children
+- 1.35 points:   iterator increment - on maximum value node in tree
+- 0.90 points:   iterator increment - on node that is the left child of the tree root when it is the maximum value node in tree
+- 0.90 points:   iterator decrement - on node that has a left child - with no subtree
+- 0.90 points:   iterator decrement - on node that has a left child - with a subtree
+- 0.90 points:   iterator decrement - on node that has both children
+- 1.58 points:   iterator decrement - on node that is a right child with no children
+- 1.58 points:   iterator decrement - on node that is a left child with no children
+- 1.35 points:   iterator decrement - on minimum value node in tree
+- 0.90 points:   iterator decrement - on node that is the right child of the tree root when it is the minimum value node in tree
+- 0.18 points:   make string tree - head links
+- 1.80 points:   stress test
+[1m
+SCORE: 42.17 / 90.00   >>>   [31m46.85 %
+
+[0m
